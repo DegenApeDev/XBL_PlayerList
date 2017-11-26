@@ -10,7 +10,7 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\network\mcpe\protocol\PlayerListPacket;
 use pocketmine\network\mcpe\protocol\types\PlayerListEntry;
 use pocketmine\event\Listener;
-
+use TheRealLinuzo\Task;
 class Main extends PluginBase implements Listener {
 
 const VERSION = "1.0";
@@ -23,12 +23,7 @@ const VERSION = "1.0";
      $this->getLogger()->info(TF::GREEN . "XBL_PlayerList is now ENABLED!");
    }
    public function onJoin(PlayerJoinEvent $event) {
-       $player = $event->getPlayer();
-       $pk = new PlayerListPacket();
-       $pk->type = PlayerListPacket::TYPE_ADD;
-       $pk->entries[] = PlayerListEntry::createAdditionEntry($player->getUniqueId(), $player->getId(), $player->getName(),$player->getSkin(), $player->getXuid());
-           foreach($this->getServer()->getOnlinePlayers() as $players){
-             $players->dataPacket($pk);
+          $player = $event->getPlayer();
+          $this->getServer()->getScheduler()->scheduleDelayedTask(new Task($this, $player), 31);
          }
        }
-     }
