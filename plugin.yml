@@ -1,0 +1,6 @@
+name: XBL_PlayerList
+author: TheRealLinuzo
+description: XBL PlayerList Enabled
+version: 1.0
+main: TheRealLinuzo\Main
+api: [3.0.0-ALPHA9] 
