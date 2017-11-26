@@ -1,6 +1,4 @@
-[![](https://poggit.pmmp.io/shield.state/XBL_PlayerList)](https://poggit.pmmp.io/p/XBL_PlayerList)
 <a href="https://poggit.pmmp.io/p/XBL_PlayerList"><img src="https://poggit.pmmp.io/shield.state/XBL_PlayerList"></a>
-[![](https://poggit.pmmp.io/shield.api/XBL_PlayerList)](https://poggit.pmmp.io/p/XBL_PlayerList)
 <a href="https://poggit.pmmp.io/p/XBL_PlayerList"><img src="https://poggit.pmmp.io/shield.api/XBL_PlayerList"></a>
 
 # XBL_PlayerList
