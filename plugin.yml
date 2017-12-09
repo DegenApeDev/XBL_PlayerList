@@ -2,5 +2,5 @@ name: XBL_PlayerList
 author: TheRealLinuzo
 description: XBL PlayerList Enabled
 version: 1.1
-main: TheRealLinuzo\Main
+main: TheRealLinuzo\XBL_PlayerList\Main
 api: [3.0.0-ALPHA9, 3.0.0-ALPHA10] 
