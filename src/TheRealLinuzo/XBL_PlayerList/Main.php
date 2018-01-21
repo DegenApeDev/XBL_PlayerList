@@ -9,6 +9,7 @@ use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\network\mcpe\protocol\PlayerListPacket;
 use pocketmine\network\mcpe\protocol\types\PlayerListEntry;
+use pocketmine\event\server\DataPacketSendEvent;
 use pocketmine\event\Listener;
 use TheRealLinuzo\XBL_PlayerList\Task;
 class Main extends PluginBase implements Listener {
@@ -24,6 +25,12 @@ const VERSION = "1.1";
    }
    public function onJoin(PlayerJoinEvent $event) {
           $player = $event->getPlayer();
+          $pk = new PlayerListPacket();
+          $pk->type = PlayerListPacket::TYPE_ADD;
+          foreach($this->getServer()->getOnlinePlayers() as $p){
+             $pk->entries[] = PlayerListEntry::createAdditionEntry($p->getUniqueId(), $p->getId(), $p->getDisplayName(), $p->getSkin(), $p->getXuid());
+          }
+          $player->dataPacket($pk);
           $this->getServer()->getScheduler()->scheduleDelayedTask(new Task($this, $player), 31);
          }
        }
